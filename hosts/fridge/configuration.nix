@@ -48,7 +48,7 @@ in
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     # /home/emil/personal/wiki/mediawiki-temp.nix
-    (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master")
+    inputs.nixos-vscode-server
 
   ];
 
