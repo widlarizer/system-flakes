@@ -4,7 +4,7 @@
     nixos-vscode-server.url = "github:nix-community/nixos-vscode-server";
   };
 
-  outputs = { self, nixpkgs }: {
+  outputs = { nixpkgs, ... } @ inputs: {
     nixosConfigurations = {
       fridge = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
