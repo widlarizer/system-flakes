@@ -160,10 +160,6 @@ in
       inherit extraGroups;
       packages = with pkgs; [ firefox alacritty stress wireshark ];
     };
-    petr = {
-      isNormalUser = true;
-      inherit extraGroups;
-    };
   };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   # List packages installed in system profile. To search, run:
