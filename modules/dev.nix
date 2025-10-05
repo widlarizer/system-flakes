@@ -1,0 +1,36 @@
+{ config, pkgs, ... }: {
+  environment.systemPackages = with pkgs; [
+    clang
+    mesa-demos
+    kdiff3
+    emacs
+    perf
+    tracy
+    meson
+    rustup
+    wireshark
+    gtkwave
+    dtc
+    gdb
+    sbcl
+    yj
+    zig
+    xdot
+    valgrind
+    poetry
+    sloc
+    qemu
+    picocom
+    perf-tools
+    iaito
+    hyperfine
+    flamegraph
+    docker
+    docker-compose
+    docker-credential-helpers
+    ccache
+    cmake
+    vscode-fhs
+    ninja
+  ];
+}

@@ -1,2 +1,40 @@
 { config, pkgs, ... }: {
+  environment.systemPackages = with pkgs; [
+    neovim
+    tealdeer
+    thermald
+    traceroute
+    file
+    tree
+    libqalculate
+    xarchiver
+    fd
+    direnv
+    nix-direnv
+    usbutils
+    unzip
+    pv
+    eza
+    nixpkgs-fmt
+    pciutils
+    polkit_gnome
+    ffmpeg
+    stress
+    plocate
+    pbzip2
+    pass
+    neofetch
+    nmap
+    moreutils
+    htop
+    bottom
+    git
+    du-dust
+    croc
+    p7zip
+    bat
+    any-nix-shell
+    wget
+  ];
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }

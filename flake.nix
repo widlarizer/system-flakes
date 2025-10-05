@@ -15,6 +15,8 @@
           ./hosts/fridge/configuration.nix
           ./modules/common.nix
           ./modules/desktop-environment.nix
+          ./modules/dev.nix
+          ./modules/gaming.nix
         ];
       };
 
@@ -27,6 +29,8 @@
           ./hosts/xps/configuration.nix
           ./modules/common.nix
           ./modules/desktop-environment.nix
+          ./modules/dev.nix
+          ./modules/gaming.nix
         ];
       };
     };
