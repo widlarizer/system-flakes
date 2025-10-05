@@ -48,7 +48,7 @@ in
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     # /home/emil/personal/wiki/mediawiki-temp.nix
-    inputs.nixos-vscode-server
+    inputs.nixos-vscode-server.nixosModules.default
 
   ];
 
