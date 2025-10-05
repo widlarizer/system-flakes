@@ -98,5 +98,62 @@ in {
     dbus-sway-environment
     configure-gtk
     mold
+    firefox
   ];
+
+  services.pipewire.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+
+  hardware.graphics.enable = true;
+  services.xserver.enable = true; # I love lying
+  services.xserver.displayManager.startx.enable = false;
+  services.xserver.displayManager.lightdm.enable = false;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+  programs.nm-applet.enable = true;
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-emoji
+    noto-fonts-emoji-blob-bin
+    nerd-fonts.noto
+    liberation_ttf
+    fira-code
+    fira-code-symbols
+    dina-font
+    proggyfonts
+    roboto
+    roboto-mono
+    roboto-serif
+    font-awesome
+  ];
+
+  # --- From NixOS wiki sway article
+
+  # xdg-desktop-portal works by exposing a series of D-Bus interfaces
+  # known as portals under a well-known name
+  # (org.freedesktop.portal.Desktop) and object path
+  # (/org/freedesktop/portal/desktop).
+  # The portal interfaces include APIs for file access, opening URIs,
+  # printing and others.
+  services.dbus.enable = true;
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    # gtk portal needed to make gtk apps happy
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
+
+  # enable sway window manager
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
+
+  # --- End
+
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
+  services.printing.drivers = [ pkgs.cnijfilter2 pkgs.gutenprint ];
+
 }

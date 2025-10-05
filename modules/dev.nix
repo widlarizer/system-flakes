@@ -33,4 +33,23 @@
     vscode-fhs
     ninja
   ];
+  programs.wireshark.enable = true;
+  virtualisation = {
+    docker = {
+        enable = true;                # Enable Docker
+        # enableNvidia = true;        # Enable Nvidia container runtime
+    };
+    lxc = {
+        enable = true;
+    	lxcfs = {
+	  enable = true;
+	};
+    };
+    libvirtd = {
+      enable = true;
+    };
+  };
+  programs.virt-manager.enable = true;
+  programs.ccache.enable = true;
+  services.nixseparatedebuginfod.enable = true;
 }
