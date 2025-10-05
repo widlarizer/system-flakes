@@ -8,6 +8,9 @@
     nixosConfigurations = {
       fridge = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        extraArgs = {
+          inherit inputs;
+        };
         modules = [
           ./hosts/fridge/configuration.nix
           ./modules/common.nix
@@ -17,6 +20,9 @@
 
       xps = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        extraArgs = {
+          inherit inputs;
+        };
         modules = [
           ./hosts/xps/configuration.nix
           ./modules/common.nix
