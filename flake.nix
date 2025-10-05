@@ -1,12 +1,16 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixos-vscode-server.url = "github:nix-community/nixos-vscode-server";
   };
 
-  outputs = { self, nixpkgs }: {
+  outputs = { nixpkgs, ... } @ inputs: {
     nixosConfigurations = {
       fridge = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = {
+          inherit inputs;
+        };
         modules = [
           ./hosts/fridge/configuration.nix
           ./modules/common.nix
@@ -16,6 +20,9 @@
 
       xps = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = {
+          inherit inputs;
+        };
         modules = [
           ./hosts/xps/configuration.nix
           ./modules/common.nix

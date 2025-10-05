@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 let
   # bash script to let dbus know about important env variables and
   # propagate them to relevent services run at the end of sway config
@@ -48,7 +48,7 @@ in
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     # /home/emil/personal/wiki/mediawiki-temp.nix
-    (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master")
+    inputs.nixos-vscode-server.nixosModules.default
 
   ];
 
@@ -336,7 +336,6 @@ in
     chromium
   ]; # bump
   services.gnome.gnome-keyring.enable = true;
-  security.pki.certificateFiles = [ /root/ca-bundle.crt ];
   security.pam.loginLimits = [
     {
       domain = "*";
@@ -471,11 +470,6 @@ hardware.graphics = {
         TimeoutStopSec = 10;
       };
   };
-
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  system.copySystemConfiguration = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
