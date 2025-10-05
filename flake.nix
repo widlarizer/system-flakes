@@ -8,12 +8,12 @@
       fridge = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./hosts/desktop/configuration.nix
+          ./hosts/fridge/configuration.nix
           ./modules/common.nix
           ./modules/desktop-environment.nix
         ];
       };
-      
+
       xps = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
