@@ -11,7 +11,7 @@
   hardware.opentabletdriver.enable = true;
   hardware.xpadneo.enable = true;
   hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;programs.steam.
+  hardware.bluetooth.powerOnBoot = true;
 
 #  services.minecraft = {
 #    enable = true;
