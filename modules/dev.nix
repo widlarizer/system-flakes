@@ -47,9 +47,24 @@
     };
     libvirtd = {
       enable = true;
+      qemu = {
+        package = pkgs.qemu_kvm;
+        runAsRoot = true;
+        swtpm.enable = true;
+        ovmf = {
+          enable = true;
+          packages = [(pkgs.OVMF.override {
+            secureBoot = true;
+            tpmSupport = true;
+          }).fd];
+        };
+      };
     };
   };
   programs.virt-manager.enable = true;
   programs.ccache.enable = true;
   services.nixseparatedebuginfod.enable = true;
+  hardware.rtl-sdr.enable = true;
+  services.udev.packages = [ pkgs.qmk-udev-rules pkgs.rtl-sdr ];
+  programs.adb.enable = true;
 }

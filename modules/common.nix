@@ -37,6 +37,7 @@
     wget
     fish
   ];
+  programs.direnv.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
@@ -81,4 +82,6 @@
     clean.enable = true;
     clean.extraArgs = "--keep-since 4d --keep 3";
   };
+  nix.extraOptions = "experimental-features = nix-command flakes";
+  nixpkgs.config.allowUnfree = true;
 }

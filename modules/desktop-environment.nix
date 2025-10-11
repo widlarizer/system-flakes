@@ -111,22 +111,25 @@ in {
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   programs.nm-applet.enable = true;
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-emoji
-    noto-fonts-emoji-blob-bin
-    nerd-fonts.noto
-    liberation_ttf
-    fira-code
-    fira-code-symbols
-    dina-font
-    proggyfonts
-    roboto
-    roboto-mono
-    roboto-serif
-    font-awesome
-  ];
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-emoji
+      noto-fonts-emoji-blob-bin
+      nerd-fonts.noto
+      liberation_ttf
+      fira-code
+      fira-code-symbols
+      dina-font
+      proggyfonts
+      roboto
+      roboto-mono
+      roboto-serif
+      font-awesome
+    ];
+  };
 
   # --- From NixOS wiki sway article
 
@@ -148,6 +151,12 @@ in {
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
+    extraPackages = with pkgs; [
+      swaylock
+      wl-clipboard
+      mako
+      wofi
+    ];
   };
 
   # --- End
@@ -155,5 +164,7 @@ in {
   # Enable CUPS to print documents.
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.cnijfilter2 pkgs.gutenprint ];
+
+  services.blueman.enable = true;
 
 }

@@ -49,6 +49,27 @@
           }
         ];
       };
+
+      blahaj = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          inherit inputs;
+        };
+        modules = [
+          ./hosts/blahaj/configuration.nix
+          ./modules/common.nix
+          ./modules/desktop-environment.nix
+          ./modules/dev.nix
+          ./modules/gaming.nix
+          ./modules/media-server.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.emil = import ./home/common.nix;
+          }
+        ];
+      };
     };
   };
 }

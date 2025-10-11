@@ -113,8 +113,6 @@ in
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
-  nix.extraOptions = "experimental-features = nix-command flakes";
-  nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = [
     (final: prev: {
       steam = prev.steam.override ({ extraLibraries ? pkgs': [], ... }: {

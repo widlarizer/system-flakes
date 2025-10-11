@@ -33,4 +33,7 @@
       "x-scheme-handler/unknown" = "firefox.desktop";
     };
   };
+  programs.fish.promptInit = ''
+    any-nix-shell fish | source
+  '';
 }
