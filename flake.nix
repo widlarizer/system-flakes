@@ -21,6 +21,7 @@
           ./modules/desktop-environment.nix
           ./modules/dev.nix
           ./modules/gaming.nix
+          ./modules/music.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -41,6 +42,7 @@
           ./modules/desktop-environment.nix
           ./modules/dev.nix
           ./modules/gaming.nix
+          ./modules/music.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
