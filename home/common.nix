@@ -36,4 +36,7 @@
   programs.fish.interactiveShellInit = ''
     any-nix-shell fish | source
   '';
+  dconf.settings = {
+        "org/gnome/desktop/peripherals/mouse" = { natural-scroll = true; };
+  };
 }
