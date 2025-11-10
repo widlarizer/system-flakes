@@ -29,7 +29,7 @@
     htop
     bottom
     git
-    du-dust
+    dust
     croc
     p7zip
     bat
