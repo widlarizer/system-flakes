@@ -54,19 +54,16 @@ in {
     wineWowPackages.full
     pulseaudio
     zulip
-    wofi
     xdg-utils
     waybar
     wev
     wget
-    wl-clipboard
     wlr-randr
     obs-studio-plugins.wlrobs
     iosevka
     alacritty
     swaybg
     swayidle
-    swaylock-effects
     sweet-nova
     slurp
     pinta
@@ -87,12 +84,9 @@ in {
     evince
     dunst
     drawio
-    mako # notification system developed by swaywm maintainer
     wdisplays # tool to configure displays
     dracula-theme # gtk theme
     adwaita-icon-theme  # default gnome cursors
-    swaylock
-    swayidle
     #glib
     wayland
     dbus-sway-environment
@@ -153,9 +147,13 @@ in {
     wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
       swaylock
+      swaylock-effects
+      swayidle
       wl-clipboard
       mako
       wofi
+      wofi-emoji
+      wofi-power-menu
     ];
   };
 

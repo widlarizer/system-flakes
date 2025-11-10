@@ -33,6 +33,11 @@
       "x-scheme-handler/unknown" = "firefox.desktop";
     };
   };
+  programs.wofi.enable = true;
+  wayland.windowManager.sway.config  = {
+    terminal = "alacritty";
+    menu = "wofi";
+  };
   programs.fish.interactiveShellInit = ''
     any-nix-shell fish | source
   '';

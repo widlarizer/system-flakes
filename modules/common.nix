@@ -44,6 +44,7 @@
   services.tailscale.enable = true;
   services.tailscale.openFirewall = true;
 
+  security.polkit.enable = true;
   security.pam.loginLimits = [
     {
       domain = "*";
