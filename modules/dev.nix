@@ -56,7 +56,6 @@
   };
   programs.virt-manager.enable = true;
   programs.ccache.enable = true;
-  services.nixseparatedebuginfod.enable = true;
   hardware.rtl-sdr.enable = true;
   services.udev.packages = [ pkgs.qmk-udev-rules pkgs.rtl-sdr ];
   programs.adb.enable = true;
