@@ -7,19 +7,23 @@
   };
   programs.git = {
     enable = true;
-    userName  = "Emil J. Tywoniak";
-    userEmail = "emil" + "@" + "tywoniak.eu";
-    aliases = {
-      	lol = "log --graph --oneline --all";
-      	meme = "!f() { current=$(git branch --show-current) && git checkout $1 && git rebase $current && git checkout $current && git merge --ff-only $1; }; f";
-        mememe = "meme";
+    settings = {
+      user = {
+        name  = "Emil J. Tywoniak";
+        email = "emil" + "@" + "tywoniak.eu";
+      };
+      aliases = {
+          lol = "log --graph --oneline --all";
+          meme = "!f() { current=$(git branch --show-current) && git checkout $1 && git rebase $current && git checkout $current && git merge --ff-only $1; }; f";
+          mememe = "meme";
+      };
+      extraConfig = {
+        core.editor = "nvim";
+        push.autoSetupRemote = true;
+        merge.conflictstyle = "diff3";
+      };
+      delta.enable = true;
     };
-    extraConfig = {
-      core.editor = "nvim";
-      push.autoSetupRemote = true;
-      merge.conflictstyle = "diff3";
-    };
-    delta.enable = true;
     maintenance.enable = true;
     maintenance.repositories = [ "/home/emil/pulls/yosys" ];
   };
