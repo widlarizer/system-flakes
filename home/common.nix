@@ -20,10 +20,13 @@
       core.editor = "nvim";
       push.autoSetupRemote = true;
       merge.conflictstyle = "diff3";
-      delta.enable = true;
     };
     maintenance.enable = true;
     maintenance.repositories = [ "/home/emil/pulls/yosys" ];
+  };
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
   };
   xdg.mimeApps = {
     enable = true;
