@@ -32,7 +32,7 @@
     in ''
       export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
       gnome_schema=org.gnome.desktop.interface
-      gsettings set $gnome_schema gtk-theme 'Dracula'
+      #gsettings set $gnome_schema gtk-theme 'Dracula'
     '';
   };
 in {
@@ -40,6 +40,7 @@ in {
     gif-for-cli
     waypipe
     tidal-hifi
+    brightnessctl
     chromium
     inxi
     strawberry
@@ -85,8 +86,8 @@ in {
     dunst
     drawio
     wdisplays # tool to configure displays
-    dracula-theme # gtk theme
-    adwaita-icon-theme  # default gnome cursors
+    #dracula-theme # gtk theme
+    #adwaita-icon-theme  # default gnome cursors
     #glib
     wayland
     dbus-sway-environment
@@ -156,6 +157,7 @@ in {
       wofi-power-menu
     ];
   };
+  programs.dconf.enable = true;
 
   # --- End
 
