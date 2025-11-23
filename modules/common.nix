@@ -63,15 +63,13 @@
 
   services.avahi = {
     nssmdns4 = true;
-    nssmdns6 = true;
     enable = true;
-    ipv4 = true;
-    ipv6 = true;
     publish = {
       enable = true;
       addresses = true;
       workstation = true;
     };
+    openFirewall = true;
   };
   services.resolved = { enable = true; };
   services.openssh = {

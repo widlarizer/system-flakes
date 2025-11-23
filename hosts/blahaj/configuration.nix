@@ -16,12 +16,12 @@ in
   #boot.blacklistedKernelModules = [ "nvidia" "nvidia_uvm" "nvidia_drm" "nvidia_modeset" ];
 
   networking.hostName = "blahaj"; # Define your hostname.
-  services.avahi.nssmdns6 = false;
-  services.avahi.ipv6 = false;
   networking.networkmanager.enable = true;
 
-  networking.nameservers = [ "1.1.1.1" "9.9.9.9" ];
-  networking.networkmanager.dns = "none";
+  # TODO this might be rly wrong
+  # networking.nameservers = [ "1.1.1.1" "9.9.9.9" ];
+  # networking.networkmanager.dns = "none";
+
   networking.enableIPv6 = false;
   #services.nscd.enable = false;
   services.syncthing = {
