@@ -32,6 +32,7 @@
     cmake
     vscode-fhs
     ninja
+    via
   ];
   programs.wireshark.enable = true;
   virtualisation = {
@@ -57,6 +58,6 @@
   programs.virt-manager.enable = true;
   programs.ccache.enable = true;
   hardware.rtl-sdr.enable = true;
-  services.udev.packages = [ pkgs.qmk-udev-rules pkgs.rtl-sdr ];
+  services.udev.packages = [ pkgs.qmk-udev-rules pkgs.rtl-sdr pkgs.via ];
   programs.adb.enable = true;
 }

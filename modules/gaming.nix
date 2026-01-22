@@ -12,6 +12,7 @@
   hardware.xpadneo.enable = true;
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
+  hardware.steam-hardware.enable = true;
 
 #  services.minecraft = {
 #    enable = true;
