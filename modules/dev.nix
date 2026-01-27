@@ -58,5 +58,5 @@
   programs.virt-manager.enable = true;
   programs.ccache.enable = true;
   hardware.rtl-sdr.enable = true;
-  services.udev.packages = [ pkgs.qmk-udev-rules pkgs.rtl-sdr pkgs.via ];
+  services.udev.packages = [ pkgs.rtl-sdr ];
 }

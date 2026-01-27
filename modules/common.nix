@@ -36,6 +36,8 @@
     any-nix-shell
     wget
     fish
+    qmk
+    via
   ];
   programs.direnv.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -90,4 +92,5 @@
   nixpkgs.config.allowUnfree = true;
 
   hardware.keyboard.qmk.enable = true;
+  services.udev.packages = [ pkgs.via ];
 }
