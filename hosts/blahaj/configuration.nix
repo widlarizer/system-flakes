@@ -17,6 +17,7 @@ in
 
   networking.hostName = "blahaj"; # Define your hostname.
   networking.networkmanager.enable = true;
+  networking.firewall.allowedTCPPorts = [ 3923 ];
 
   # TODO this might be rly wrong
   # networking.nameservers = [ "1.1.1.1" "9.9.9.9" ];
