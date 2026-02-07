@@ -59,5 +59,4 @@
   programs.ccache.enable = true;
   hardware.rtl-sdr.enable = true;
   services.udev.packages = [ pkgs.qmk-udev-rules pkgs.rtl-sdr pkgs.via ];
-  programs.adb.enable = true;
 }
