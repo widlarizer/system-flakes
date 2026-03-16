@@ -94,6 +94,7 @@ in {
     configure-gtk
     mold
     firefox
+    qlcplus
   ];
 
   services.pipewire.enable = true;
