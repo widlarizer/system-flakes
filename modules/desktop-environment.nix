@@ -168,4 +168,6 @@ in {
 
   services.blueman.enable = true;
 
+  services.udev.packages = [ pkgs.qlcplus ];
+
 }
