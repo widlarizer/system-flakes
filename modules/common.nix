@@ -23,7 +23,7 @@
     plocate
     pbzip2
     pass
-    neofetch
+    fastfetch
     nmap
     moreutils
     htop
