@@ -51,8 +51,8 @@ in {
     slack
     wine
     winetricks
-    #wineWowPackages.waylandFull
-    wineWowPackages.full
+    #wineWow64Packages.waylandFull
+    wineWow64Packages.full
     pulseaudio
     zulip
     xdg-utils
