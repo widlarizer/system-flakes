@@ -62,7 +62,7 @@ in
     };
   };
 
-  services.xserver.videoDrivers = [ "mesa" ];
+  # services.xserver.videoDrivers = [ "mesa" ];
   hardware.graphics = {
     enable32Bit = true;
     extraPackages = [ pkgs.intel-media-driver pkgs.vpl-gpu-rt ];
