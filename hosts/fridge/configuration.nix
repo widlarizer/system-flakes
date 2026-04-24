@@ -31,7 +31,7 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.kernelModules = [ "amdgpu" ];
-  boot.kernelPackages = pkgs.linuxPackages_6_12;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   services.earlyoom.enable = true;
 
   networking.hostName = "fridge"; # Define your hostname.
