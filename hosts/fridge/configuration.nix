@@ -22,6 +22,7 @@ in
   };
   fileSystems."/mnt/s" = {
     device = "/dev/disk/by-label/s";
+    fsType = "auto";
   };
 
   services.vscode-server.enable = true;
