@@ -31,6 +31,7 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.kernelModules = [ "amdgpu" ];
+  hardware.enableRedistributableFirmware = true; # may help xe
   boot.kernelPackages = pkgs.linuxPackages_latest;
   services.earlyoom.enable = true;
 
