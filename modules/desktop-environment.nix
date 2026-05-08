@@ -95,6 +95,7 @@ in {
     mold
     firefox
     qlcplus
+    signal-desktop
   ];
 
   services.pipewire.enable = true;
