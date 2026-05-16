@@ -2,11 +2,27 @@
   environment.systemPackages = with pkgs; [
     osu-lazer-bin
     prismlauncher
+    alcom
+    unityhub
   ];
+  # environment.sessionVariables = {
+  #   STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
+  # };
+
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
+    extraCompatPackages = with pkgs; [
+      (pkgs.proton-ge-bin.overrideAttrs (oldAttrs: {
+        version = "GE-Proton10-33-rtsp24-1";
+        src = pkgs.fetchzip {
+          url = "https://github.com/SpookySkeletons/proton-ge-rtsp/releases/download/GE-Proton10-33-rtsp24-1/GE-Proton10-33-rtsp24-1.tar.gz";
+          hash = "sha256-KVc5YXJea0eQImKUPg6eW7uSSe1e+mncB4cSBV4IKME=";
+        };
+      }))
+    ];
   };
+  # NOTE: beware of firewall for vrchat
 
   hardware.opentabletdriver.enable = true;
   hardware.xpadneo.enable = true;

@@ -121,6 +121,11 @@ in
           pkgs'.gperftools
         ]);
       });
+      # unityhub = prev.unityhub.override ({
+      #   extraPkgs = pkgs': with pkgs'; [
+      #     xdg-utils
+      #   ];
+      # });
     })
   ];
 
