@@ -22,6 +22,7 @@
           ./modules/dev.nix
           ./modules/gaming.nix
           ./modules/music.nix
+          ./modules/media-server.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
