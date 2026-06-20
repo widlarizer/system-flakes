@@ -54,7 +54,6 @@ in {
     #wineWow64Packages.waylandFull
     wineWow64Packages.full
     pulseaudio
-    zulip
     xdg-utils
     waybar
     wev
