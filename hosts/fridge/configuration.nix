@@ -121,6 +121,18 @@ in
           pkgs'.gperftools
         ]);
       });
+      # Build xdg-desktop-portal-wlr from PR #389 (funk443:screencast-retry)
+      # which fixes screencast freezing / buffer-retry on ext-image-copy-capture
+      # (window sharing on Intel Arc Battlemage). Drop once merged & in nixpkgs.
+      # https://github.com/emersion/xdg-desktop-portal-wlr/pull/389
+      xdg-desktop-portal-wlr = prev.xdg-desktop-portal-wlr.overrideAttrs (old: {
+        src = final.fetchFromGitHub {
+          owner = "funk443";
+          repo = "xdg-desktop-portal-wlr";
+          rev = "74be7063347880f6bf98689e24dd9a6e98032405";
+          sha256 = "125rsvls0gyc7a0lspvrqm54ckplfvd18q963yfmq47d6n3im6gr";
+        };
+      });
       # unityhub = prev.unityhub.override ({
       #   extraPkgs = pkgs': with pkgs'; [
       #     xdg-utils

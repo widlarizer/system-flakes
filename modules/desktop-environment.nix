@@ -93,7 +93,9 @@ in {
     configure-gtk
     mold
     firefox
-    qlcplus
+    # qlcplus: unbuildable upstream — ola pins python protobuf 4.21.12, whose
+    # setup.py imports pkg_resources, removed in setuptools 82. Restore once fixed.
+    # qlcplus
     signal-desktop
   ];
 
@@ -139,6 +141,10 @@ in {
   xdg.portal = {
     enable = true;
     wlr.enable = true;
+    wlr.settings.screencast = {
+      chooser_type = "dmenu";
+      chooser_cmd = "${pkgs.wofi}/bin/wofi --dmenu";
+    };
     # gtk portal needed to make gtk apps happy
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
@@ -168,6 +174,6 @@ in {
 
   services.blueman.enable = true;
 
-  services.udev.packages = [ pkgs.qlcplus ];
+  # services.udev.packages = [ pkgs.qlcplus ];
 
 }
