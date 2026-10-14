@@ -56,7 +56,7 @@ in
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users = let extraGroups = [ "wheel" "docker" "lxd" "libvirtd" "input" ];
+  users.users = let extraGroups = [ "wheel" "docker" "lxd" "libvirtd" "input" "networkmanager" ];
   in {
     emil = {
       isNormalUser = true;
