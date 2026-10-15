@@ -39,6 +39,23 @@
         "type": "github"
       }
     },
+    "mesa-xe2enc": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1792017762,
+        "narHash": "sha256-oKTtQRYdjEEEEDQ63xQYk+tFr7aIypxH2teUhbJUqMw=",
+        "owner": "widlarizer",
+        "repo": "mesa",
+        "rev": "0ad2369902ac917db8e6b0de26b0a0a44df90b82",
+        "type": "github"
+      },
+      "original": {
+        "owner": "widlarizer",
+        "ref": "anv-xe2-video-encode",
+        "repo": "mesa",
+        "type": "github"
+      }
+    },
     "nixos-vscode-server": {
       "inputs": {
         "flake-parts": "flake-parts"
@@ -91,6 +108,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "mesa-xe2enc": "mesa-xe2enc",
         "nixos-vscode-server": "nixos-vscode-server",
         "nixpkgs": "nixpkgs"
       }

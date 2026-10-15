@@ -8,6 +8,7 @@ in
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./mesa-xe2enc.nix
     # /home/emil/personal/wiki/mediawiki-temp.nix
     inputs.nixos-vscode-server.nixosModules.default
 

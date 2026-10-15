@@ -6,6 +6,10 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    mesa-xe2enc = {
+      url = "github:widlarizer/mesa/anv-xe2-video-encode";
+      flake = false;
+    };
   };
 
   outputs = { nixpkgs, home-manager, ... } @ inputs: {
