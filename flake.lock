@@ -42,11 +42,11 @@
     "mesa-xe2enc": {
       "flake": false,
       "locked": {
-        "lastModified": 1792017762,
-        "narHash": "sha256-oKTtQRYdjEEEEDQ63xQYk+tFr7aIypxH2teUhbJUqMw=",
+        "lastModified": 1792194086,
+        "narHash": "sha256-ag12MufpZG45yiVFxK0TC7KmIMnHynXTchb5s05xV84=",
         "owner": "widlarizer",
         "repo": "mesa",
-        "rev": "0ad2369902ac917db8e6b0de26b0a0a44df90b82",
+        "rev": "a868922175d5e93349c01182a7591addf494683d",
         "type": "github"
       },
       "original": {
