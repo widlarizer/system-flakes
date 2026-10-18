@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  imports = [ ./sway.nix ];
+
   home.stateVersion = "25.05";
   home.sessionVariables = {
     EDITOR = "nvim";
@@ -37,11 +39,6 @@
       "x-scheme-handler/about" = "firefox.desktop";
       "x-scheme-handler/unknown" = "firefox.desktop";
     };
-  };
-  programs.wofi.enable = true;
-  wayland.windowManager.sway.config  = {
-    terminal = "alacritty";
-    menu = "wofi";
   };
   programs.fish.interactiveShellInit = ''
     any-nix-shell fish | source

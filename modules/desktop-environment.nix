@@ -55,13 +55,11 @@ in {
     wineWow64Packages.full
     pulseaudio
     xdg-utils
-    waybar
     wev
     wget
     wlr-randr
     obs-studio-plugins.wlrobs
     iosevka
-    alacritty
     swaybg
     swayidle
     sweet-nova
