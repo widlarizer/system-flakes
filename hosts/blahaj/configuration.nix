@@ -20,7 +20,7 @@ in
   networking.firewall.allowedTCPPorts = [ 3923 ];
 
   # TODO this might be rly wrong
-  # networking.nameservers = [ "1.1.1.1" "9.9.9.9" ];
+  networking.nameservers = [ "1.1.1.1" "9.9.9.9" ];
   # networking.networkmanager.dns = "none";
 
   networking.enableIPv6 = false;
