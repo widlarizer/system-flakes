@@ -10,6 +10,7 @@ in
     ./hardware-configuration.nix
     ./mesa-xe2enc.nix
     ./wpa-supplicant-no-restart.nix
+    ./steam-frame-wifi.nix
     # /home/emil/personal/wiki/mediawiki-temp.nix
     inputs.nixos-vscode-server.nixosModules.default
 
