@@ -33,6 +33,7 @@
     vscode-fhs
     ninja
     via
+    sublime-merge
   ];
   programs.wireshark.enable = true;
   virtualisation = {

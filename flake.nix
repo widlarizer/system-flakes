@@ -7,7 +7,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     mesa-xe2enc = {
-      url = "github:widlarizer/mesa/anv-xe2-video-encode";
+      url = "github:widlarizer/mesa/anv-xe2-encode-completions";
       flake = false;
     };
   };
