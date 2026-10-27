@@ -59,6 +59,12 @@ in
       isNormalUser = true;
       inherit extraGroups;
     };
+    adam = {
+      isNormalUser = true;
+      extraGroups = [ "input" ];
+      # Empty password: local login without a prompt (never via SSH/su/sudo)
+      hashedPassword = "";
+    };
   };
   programs.chromium.defaultSearchProviderEnabled = false;
 
