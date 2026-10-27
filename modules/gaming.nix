@@ -16,6 +16,8 @@
     extraCompatPackages = with pkgs; [
       (pkgs.proton-ge-bin.overrideAttrs (oldAttrs: {
         version = "GE-Proton10-33-rtsp24-1";
+        # upstream now defaults to "${version}-x86_64", but this tarball has no arch suffix
+        toolName = "GE-Proton10-33-rtsp24-1";
         src = pkgs.fetchzip {
           url = "https://github.com/SpookySkeletons/proton-ge-rtsp/releases/download/GE-Proton10-33-rtsp24-1/GE-Proton10-33-rtsp24-1.tar.gz";
           hash = "sha256-KVc5YXJea0eQImKUPg6eW7uSSe1e+mncB4cSBV4IKME=";

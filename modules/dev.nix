@@ -22,7 +22,6 @@
     qemu
     picocom
     perf-tools
-    iaito
     hyperfine
     flamegraph
     docker
@@ -57,7 +56,9 @@
     };
   };
   programs.virt-manager.enable = true;
-  programs.ccache.enable = true;
+  # Disabled: its nix-ccache setgid wrapper is a perl script, which nixpkgs'
+  # ensure-wrapper-integrity check now rejects (non-ELF). Re-enable once fixed upstream.
+  # programs.ccache.enable = true;
   hardware.rtl-sdr.enable = true;
   services.udev.packages = [ pkgs.rtl-sdr ];
 }
