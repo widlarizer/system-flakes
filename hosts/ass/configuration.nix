@@ -44,6 +44,9 @@ in
   };
   services.matter-server = {
     enable = true;
+    package = pkgs.python-matter-server.overridePythonAttrs (old: {
+      patches = (old.patches or [ ]) ++ [ ./matter-server-skip-bad-paa.patch ];
+    });
     extraArgs.primary-interface = "eno1";
   };
 
