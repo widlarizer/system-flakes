@@ -37,6 +37,19 @@ in
       "cast"
       "matter"
     ];
+    customComponents = [
+      (pkgs.buildHomeAssistantComponent rec {
+        owner = "AlexxIT";
+        domain = "sonoff";
+        version = "3.13.3";
+        src = pkgs.fetchFromGitHub {
+          owner = "AlexxIT";
+          repo = "SonoffLAN";
+          tag = "v${version}";
+          hash = "sha256-W0IdhnEVLkElp5thBwhOvCEdETQQKgPgpgA0/wUbeoc=";
+        };
+      })
+    ];
     config = {
       default_config = { };
       # let the UI editors save automations, scenes and scripts
