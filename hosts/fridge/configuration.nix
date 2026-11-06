@@ -44,19 +44,6 @@ in
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
   networking.interfaces.enp15s0.wakeOnLan.enable = true;
 
-  services.syncthing = {
-    enable = true;
-    user = "emil";
-    dataDir = "/mnt/Blue/sync";
-    configDir = "/home/emil/.config/syncthing";
-    openDefaultPorts = true;
-    guiAddress = "0.0.0.0:8384";
-    settings.gui = {
-      thisVariableDoesntExist = "yep";
-      user = "admin";
-      password = "m9KCQaHn";
-    };
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users = let extraGroups = [ "wheel" "docker" "lxd" "libvirtd" "input" "networkmanager" ];

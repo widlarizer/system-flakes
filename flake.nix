@@ -6,13 +6,17 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     mesa-xe2enc = {
       url = "github:widlarizer/mesa/anv-xe2-encode-completions";
       flake = false;
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... } @ inputs: {
+  outputs = { nixpkgs, home-manager, disko, ... } @ inputs: {
     nixosConfigurations = {
       fridge = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -78,6 +82,31 @@
             home-manager.backupFileExtension = "hm-bak";
             home-manager.users.emil = import ./home/common.nix;
           }
+        ];
+      };
+
+      ass = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          inherit inputs;
+        };
+        modules = [
+          ./hosts/ass/configuration.nix
+          ./hosts/ass/disk-config.nix
+          ./modules/server.nix
+          disko.nixosModules.disko
+        ];
+      };
+
+      nas = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          inherit inputs;
+        };
+        modules = [
+          ./hosts/nas/configuration.nix
+          ./modules/server.nix
+          disko.nixosModules.disko
         ];
       };
     };

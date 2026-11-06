@@ -25,18 +25,6 @@ in
 
   networking.enableIPv6 = false;
   #services.nscd.enable = false;
-  services.syncthing = {
-    enable = true;
-    user = "emil";
-    dataDir = "/home/emil/sync";
-    configDir = "/home/emil/.config/syncthing";
-    openDefaultPorts = true;
-    guiAddress = "0.0.0.0:8384";
-    settings.gui = {
-      user = "admin";
-      password = "m9KCQaHn";
-    };
-  };
   fileSystems."/mnt/Blue" = {
     device = "/dev/sda1";  # Replace with the actual device name (e.g., sda1)
     fsType = "ntfs";       # Replace with the file system type if different
