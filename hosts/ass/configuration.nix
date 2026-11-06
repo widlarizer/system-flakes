@@ -32,6 +32,7 @@ in
       "isal"
       "esphome"
       "cast"
+      "matter"
     ];
     config = {
       default_config = { };
@@ -41,6 +42,11 @@ in
       "script ui" = "!include scripts.yaml";
     };
   };
+  services.matter-server = {
+    enable = true;
+    extraArgs.primary-interface = "eno1";
+  };
+
   systemd.tmpfiles.rules = [
     "f ${haDir}/automations.yaml 0644 hass hass - []"
     "f ${haDir}/scenes.yaml 0644 hass hass - []"
