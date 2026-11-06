@@ -42,6 +42,20 @@ in
       "script ui" = "!include scripts.yaml";
     };
   };
+
+  systemd.services.tailscale-serve-ha = {
+    after = [ "tailscaled.service" "home-assistant.service" ];
+    wants = [ "tailscaled.service" ];
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+      Restart = "on-failure";
+      RestartSec = 10;
+      ExecStart = "${lib.getExe config.services.tailscale.package} serve --bg --https=443 http://127.0.0.1:8123";
+    };
+  };
+
   services.matter-server = {
     enable = true;
     package = pkgs.python-matter-server.overridePythonAttrs (old: {
