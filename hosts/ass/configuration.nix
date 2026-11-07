@@ -5,7 +5,10 @@ in
 {
   # Fujitsu Futro S940 (Pentium Silver J5005, 4 GB RAM, 32 GB SATA SSD).
   # Headless Home Assistant box. SSH, tailscale, avahi, upgrades: modules/server.nix
-  imports = [ ./hardware-configuration.nix ];
+  imports = [
+    ./hardware-configuration.nix
+    ./dmx.nix
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 10;
