@@ -8,6 +8,7 @@ in
   imports = [
     ./hardware-configuration.nix
     ./dmx.nix
+    ./lights.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
