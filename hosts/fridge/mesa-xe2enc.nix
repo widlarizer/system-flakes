@@ -74,6 +74,10 @@ let
     version = "26.3.0-devel-xe2enc";
     src = inputs.mesa-xe2enc;
     patches = [ opencl-patch ];
+    # Mesa main replaced amdgpu-virtio and amd-use-llvm with amd-options.
+    mesonFlags = map
+      (f: if f == "-Damdgpu-virtio=true" then "-Damd-options=use-llvm,virtio" else f)
+      old.mesonFlags;
     postUnpack = (old.postUnpack or "") + ''
       cp -r ${venus-protocol} $sourceRoot/subprojects/venus-protocol-1.1.3
       chmod -R u+w $sourceRoot/subprojects/venus-protocol-1.1.3
