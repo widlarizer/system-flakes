@@ -9,6 +9,7 @@ in
     ./hardware-configuration.nix
     ./dmx.nix
     ./lights.nix
+    ./backup.nix
   ];
 
   boot.loader.systemd-boot.enable = true;

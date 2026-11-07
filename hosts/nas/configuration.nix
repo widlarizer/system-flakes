@@ -5,6 +5,7 @@
   imports = [
     ./hardware-configuration.nix
     ./disk-config.nix
+    ./backup.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
