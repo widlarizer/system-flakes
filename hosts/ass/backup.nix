@@ -10,7 +10,7 @@
       rsync -a --delete \
         -e "ssh -i /root/.ssh/backup-nas -o StrictHostKeyChecking=accept-new -o ConnectTimeout=20" \
         /var/lib/hass /var/lib/private/matterjs-server \
-        backup-ass@nas.tail3764a7.ts.net:/
+        backup-ass@nas.tail3764a7.ts.net:
     '';
   };
 
