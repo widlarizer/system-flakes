@@ -21,6 +21,7 @@
       };
       core.editor = "nvim";
       push.autoSetupRemote = true;
+      push.default = "current";
       merge.conflictstyle = "diff3";
     };
     maintenance.enable = true;
