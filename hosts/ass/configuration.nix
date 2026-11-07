@@ -16,7 +16,6 @@ in
   networking.useDHCP = true;
   networking.nameservers = [ "1.1.1.1" "9.9.9.9" ];
   networking.dhcpcd.extraConfig = "nohook resolv.conf";
-  services.tailscale.extraSetFlags = [ "--accept-dns=false" ];
 
   # emil has no password, so sudo can't prompt for one
   security.sudo.wheelNeedsPassword = false;
