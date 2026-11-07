@@ -23,11 +23,11 @@
   networking.networkmanager.dns = "none";
   systemd.services.NetworkManager-wait-online.enable = false;
 
-  services.avahi.publish = {
-    domain = true;
-    hinfo = true;
-    userServices = true;
-    workstation = true;
+  services.avahi.settings.publish = {
+    publish-domain = true;
+    publish-hinfo = true;
+    disable-user-service-publishing = false;
+    publish-workstation = true;
   };
 
   services.locate.package = pkgs.mlocate;
