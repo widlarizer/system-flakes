@@ -10,10 +10,6 @@ let
       "switch.s60tpf_sonoff_1002a16cd4_1"
     ];
   };
-  notFromAutomation = {
-    condition = "template";
-    value_template = "{{ trigger.to_state.context.parent_id is none }}";
-  };
 in
 {
   services.home-assistant.config."automation lights" = [
@@ -29,11 +25,17 @@ in
           to = [ "on" "off" ];
         }
       ];
-      conditions = [ notFromAutomation ];
       actions = [
         {
+          variables.targets = "{{ ${builtins.toJSON obyvak.lights} | reject('eq', trigger.entity_id) | reject('is_state', trigger.to_state.state) | list }}";
+        }
+        {
+          condition = "template";
+          value_template = "{{ targets | count > 0 }}";
+        }
+        {
           action = "switch.turn_{{ trigger.to_state.state }}";
-          target.entity_id = obyvak.lights;
+          target.entity_id = "{{ targets }}";
         }
       ];
     }
