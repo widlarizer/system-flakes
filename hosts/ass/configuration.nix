@@ -76,12 +76,12 @@ in
     };
   };
 
-  services.matter-server = {
+  services.matterjs-server = {
     enable = true;
-    package = pkgs.python-matter-server.overridePythonAttrs (old: {
-      patches = (old.patches or [ ]) ++ [ ./matter-server-skip-bad-paa.patch ];
-    });
-    extraArgs.primary-interface = "eno1";
+    extraArgs = [
+      "--vendorid=4939"
+      "--primary-interface=eno1"
+    ];
   };
 
   systemd.tmpfiles.rules = [

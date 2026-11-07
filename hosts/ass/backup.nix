@@ -5,11 +5,11 @@
     serviceConfig.Type = "oneshot";
     script = ''
       timeout 20 bash -c '</dev/tcp/nas.tail3764a7.ts.net/22'
-      systemctl stop home-assistant matter-server
-      trap 'systemctl start matter-server home-assistant' EXIT
+      systemctl stop home-assistant matterjs-server
+      trap 'systemctl start matterjs-server home-assistant' EXIT
       rsync -a --delete \
         -e "ssh -i /root/.ssh/backup-nas -o StrictHostKeyChecking=accept-new -o ConnectTimeout=20" \
-        /var/lib/hass /var/lib/private/matter-server \
+        /var/lib/hass /var/lib/private/matterjs-server \
         backup-ass@nas.tail3764a7.ts.net:/
     '';
   };
