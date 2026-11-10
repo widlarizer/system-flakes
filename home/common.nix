@@ -22,6 +22,7 @@
       core.editor = "nvim";
       push.autoSetupRemote = true;
       push.default = "current";
+      fetch.parallel = 8;
       merge.conflictstyle = "diff3";
     };
     maintenance.enable = true;
