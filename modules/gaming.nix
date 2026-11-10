@@ -2,7 +2,6 @@
   environment.systemPackages = with pkgs; [
     osu-lazer-bin
     prismlauncher
-    alcom
     unityhub
     heroic
   ];
@@ -32,6 +31,8 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   hardware.steam-hardware.enable = true;
+  # SteamVR raises its compositor and vrlink network threads through rtkit.
+  security.rtkit.enable = true;
 
 #  services.minecraft = {
 #    enable = true;
