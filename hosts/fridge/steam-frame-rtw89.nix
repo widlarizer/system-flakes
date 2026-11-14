@@ -30,8 +30,6 @@ in
   boot.extraModulePackages = [ rtw89 ];
   boot.extraModprobeConfig = "options rtw89_core reg6_pwr_override=1"; # LPI
 
-  networking.networkmanager.wifi.powersave = false;
-
   # SteamOS's low latency mode; registers get reset mid-session, so recheck.
   systemd.services.steam-frame-low-latency = {
     wantedBy = [ "multi-user.target" ];
