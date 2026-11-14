@@ -11,6 +11,7 @@ in
     ./mesa-xe2enc.nix
     ./wpa-supplicant-no-restart.nix
     ./steam-frame-wifi.nix
+    ./steam-frame-rtw89.nix
     # /home/emil/personal/wiki/mediawiki-temp.nix
     inputs.nixos-vscode-server.nixosModules.default
 
