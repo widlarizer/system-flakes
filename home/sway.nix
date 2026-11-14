@@ -37,6 +37,10 @@ in
         # LinkedIn
         "${mod}+Shift+Ctrl+Alt+l" = "exec firefox linkedin.com";
 
+        # stack only the focused window (wrap it in a new container first)
+        # instead of switching the whole parent container to stacking
+        "${mod}+s" = "splitv; layout stacking";
+
         "XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +5%";
         "XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -5%";
         "XF86AudioMute" = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle";
