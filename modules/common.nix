@@ -38,6 +38,7 @@
     fish
     qmk
     via
+    tmux
   ];
   programs.direnv.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
