@@ -107,6 +107,8 @@ in {
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   programs.nm-applet.enable = true;
+  # put ~/.local/bin on the session PATH so the sway launcher (wofi --show run) lists its scripts
+  environment.localBinInPath = true;
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
