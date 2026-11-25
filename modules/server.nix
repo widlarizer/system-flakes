@@ -51,7 +51,7 @@ in
   system.autoUpgrade = {
     enable = true;
     flake = "github:widlarizer/system-flakes";
-    flags = [ "--update-input" "nixpkgs" "-L" ];
+    flags = [ "--update-input" "nixpkgs" "--no-write-lock-file" "-L" ];
     upgrade = false;
     dates = "04:00";
     randomizedDelaySec = "45min";
