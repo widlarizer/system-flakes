@@ -15,6 +15,7 @@ let
     lights = [
       "switch.s60tpf_sonoff_1002a16be4_1"
       "switch.s60tpf_sonoff_1002a15df7_1"
+      "light.dmx_lamp"
     ];
   };
   online = lights: "${builtins.toJSON lights} | reject('is_state', 'unavailable')";
@@ -64,7 +65,7 @@ in
           variables.new_state = "{{ 'off' if targets | select('is_state', 'on') | list | count > 0 else 'on' }}";
         }
         {
-          action = "switch.turn_{{ new_state }}";
+          action = "homeassistant.turn_{{ new_state }}";
           target.entity_id = "{{ targets }}";
           continue_on_error = true;
         }

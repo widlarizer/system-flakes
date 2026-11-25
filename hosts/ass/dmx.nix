@@ -14,6 +14,7 @@ in
 
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTR{idVendor}=="16c0", ATTR{idProduct}=="05dc", ATTR{manufacturer}=="www.anyma.ch", ATTR{product}=="uDMX", GROUP="ola", MODE="0660"
+    ACTION=="add", SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTR{idVendor}=="16c0", ATTR{idProduct}=="05dc", ATTR{product}=="uDMX", RUN+="${pkgs.systemd}/bin/systemctl --no-block try-restart olad.service"
   '';
 
   environment.systemPackages = [ pkgs.ola ];
