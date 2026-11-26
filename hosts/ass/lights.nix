@@ -71,5 +71,22 @@ in
         }
       ];
     }
+    {
+      id = "loznice_wake";
+      alias = "Ložnice: budík v 9";
+      triggers = [
+        {
+          trigger = "time";
+          at = "09:00:00";
+        }
+      ];
+      actions = [
+        {
+          action = "homeassistant.turn_on";
+          target.entity_id = "{{ ${online loznice.lights} | list }}";
+          continue_on_error = true;
+        }
+      ];
+    }
   ];
 }
