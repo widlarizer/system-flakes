@@ -10,6 +10,7 @@ in
     ./dmx.nix
     ./lights.nix
     ./backup.nix
+    ./pihole.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
